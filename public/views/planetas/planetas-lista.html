@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+    <title>Planetas</title>
+</head>
+
+
+<body>
+    
+    <main ng-controller="PlanetasController as vm">
+       
+        <label for="" id="label-pagina-planetas"> {{vm.titulo}} </label>
+
+        <div>
+            <input type="text" id="pesquisa-planeta" ng-model="vm.planeta"/> 
+            <button id="btn-pesquisar" ng-click="vm.pesquisarPlaneta()"> Pesquisar </button>
+        </div>
+
+        <div ng-if="vm.planetas && vm.planetas.length > 0" id="planetas-container">
+            <div ng-repeat="planeta in vm.planetas"> {{ planeta.name }}</div>
+        </div>
+    </main>
+    
+    <script src="/js/app/app.module.js"></script>
+    <script src="/js/app/services/planetas.service.js"></script>
+    <script src="/js/app/controllers/planetas.controller.js"></script>
+    
+    <script>
+        angular.bootstrap(document, ['app']);
+    </script>
+</body>
+
+</html>
