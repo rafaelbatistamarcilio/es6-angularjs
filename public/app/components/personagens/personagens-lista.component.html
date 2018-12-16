@@ -1,0 +1,19 @@
+
+<h5>{{$ctrl.titulo}}</h5>
+
+<div>
+    <input type="text" id="pesquisa-personagem" ng-model="$ctrl.pesquisa" />
+    <button id="btn-pesquisar" ng-click="$ctrl.pesquisarPersonagem()"> Pesquisar </button>
+</div>
+
+<div ng-if="$ctrl.personagens.length > 0">
+    <app-personagem-detalhe
+        ng-repeat="personagem in $ctrl.personagens"
+        personagem="personagem"
+        on-personagem-escolhido="$ctrl.mostrarEscolha($event)">
+    </app-personagem-detalhe>
+</div>
+
+<div id="personagem-escolhido" ng-if="$ctrl.escolhido">
+    Escolhido: {{$ctrl.escolhido}}
+</div>

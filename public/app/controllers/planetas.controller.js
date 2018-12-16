@@ -1,18 +1,21 @@
 (function () {
     'use strict';
     
+    angular.module('app').controller('PlanetasController', PlanetasController);
+    PlanetasController.$inject = ['PlanetasService'];
+    
     function PlanetasController(PlanetasService) {
         var vm = this;
         vm.titulo = 'Pesquisa de Planetas do Star Wars';
         vm.planetas = [];
         vm.nome ='';
 
-        vm.$onInit = onInit;
+        vm.$onInit = $onInit;
         vm.recuperarPlanetas = recuperarPlanetas;
         vm.pesquisarPlaneta = pesquisarPlaneta;
 
         /** métodos */
-        function onInit() {
+        function $onInit() {
             vm.recuperarPlanetas();
         }
         
@@ -29,6 +32,4 @@
 
     }
 
-    angular.module('app').controller('PlanetasController', PlanetasController);
-    PlanetasController.$inject = ['PlanetasService'];
 })();

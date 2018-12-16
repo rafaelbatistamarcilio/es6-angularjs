@@ -1,0 +1,44 @@
+<html lang="en" >
+
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-route.min.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.min.js"></script> -->
+    
+    <!-- DIRECTIVES -->
+    <script src="/app/directives/app.directives.module.js"></script>
+    <script src="/app/directives/planeta/planeta.directive.js"></script>
+
+    
+    <!-- APP -->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.routing.js"></script>
+
+    <!-- SERVICES -->
+    <script src="/app/services/planetas.service.js"></script>
+    <script src="/app/services/personagens.service.js"></script>
+    
+    <!-- CONTROLLERS -->
+    <script src="/app/controllers/home.controller.js"></script>
+    <script src="/app/controllers/planetas.controller.js"></script>
+
+    <!-- COMPONENTS -->
+    <script src="/app/components/personagens/personagens-lista.component.js"></script>
+    <script src="/app/components/personagens/personagem-detalhe/personagem-detalhe.component.js"></script>
+
+    <title>SW SPA</title>
+</head>
+
+<body ng-app="app">
+    <main>
+        <ng-view></ng-view>
+    </main>
+</body>
+
+</html>
