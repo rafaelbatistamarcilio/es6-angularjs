@@ -1,27 +1,45 @@
 (function () {
     'use strict';
-
     angular.module('app').config(AppRouting);
-    AppRouting.$inject = ['$locationProvider', '$routeProvider'];
+    AppRouting.$inject = ['$stateProvider'];
 
-    function AppRouting($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('');
+    function AppRouting($stateProvider) {
+     
+        var home = {
+            name: 'home',
+            url: '/home',
+            controller:'HomeController as vm',
+            templateUrl: '/views/home/home.html',
+            lazyLoad: function ($transition$) {
+                return $transition$.injector().get('$ocLazyLoad').load('./app/controllers/home.controller.js');
+            }
+        }
 
-      $routeProvider.
-        when('/', {
-          controller:'HomeController',
-          controllerAs:'vm',
-          templateUrl:'/views/home/home.html'
-        }).
-        when('/planetas', {
-            controller:'PlanetasController',
-            controllerAs:'vm',
-            templateUrl:'/views/planetas/planetas-lista.html'
-        }).
-        when('/personagens', {
-            template:'<app-personagens-lista><app-personagens-lista>'
-        }).
-        otherwise('/');
+        var planetas = {
+            name: 'planetas',
+            url: '/planetas',
+            controller:'PlanetasController as vm',
+            templateUrl: '/views/planetas/planetas-lista.html',
+            lazyLoad: function ($transition$) {
+                $transition$.injector().get('$ocLazyLoad').load('./app/controllers/planetas.controller.js');
+                $transition$.injector().get('$ocLazyLoad').load('./app/directives/planeta/planeta.directive.js');
+                return $transition$.injector().get('$ocLazyLoad').load('./app/services/planetas.service.js');
+            }
+        }
+
+        var personagens = {
+            name: 'personagens',
+            url: '/personagens',
+            component: 'appPersonagensLista',
+            lazyLoad: function ($transition$) {
+                $transition$.injector().get('$ocLazyLoad').load('./app/services/personagens.service.js');
+                $transition$.injector().get('$ocLazyLoad').load('./app/components/personagens/personagem-detalhe/personagem-detalhe.component.js');
+                return $transition$.injector().get('$ocLazyLoad').load('./app/components/personagens/personagens-lista/personagens-lista.component.js');
+            }
+        }
+
+        $stateProvider.state(home);
+        $stateProvider.state(planetas);
+        $stateProvider.state(personagens);
     }
-  
 })();

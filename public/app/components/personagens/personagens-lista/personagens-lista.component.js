@@ -2,7 +2,7 @@
     'use strict';
     
     angular.module('app').component('appPersonagensLista', {
-        templateUrl: '/app/components/personagens/personagens-lista.component.html',
+        templateUrl: '/app/components/personagens/personagens-lista/personagens-lista.component.html',
         controller: PersonagensListaComponent
     });
     PersonagensListaComponent.$inject = ['PersonagensService'];

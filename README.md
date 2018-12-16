@@ -20,3 +20,9 @@ para debugar os testes:
     F5 no VS Code
 
 
+# lazy loading usando UI-Router e oclazyload
+https://ui-router.github.io/guide/lazyloading
+
+https://oclazyload.readme.io/docs/with-your-router
+
+
