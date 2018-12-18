@@ -1,4 +1,4 @@
-(function () {
+(()=> {
     'use strict';
 
     angular.module('app', [
@@ -6,4 +6,5 @@
         'oc.lazyLoad',
         'app.directives'
     ]);
+    angular.element(document).ready( ()=> angular.bootstrap(document, ['app']) );
 })();

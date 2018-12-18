@@ -1,29 +1,32 @@
-<html lang="en" >
+<html lang="en">
 
-<head >
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/oclazyload/1.1.0/ocLazyLoad.min.js"></script>
-    
-    <!-- DIRECTIVES -->
-    <script src="/app/directives/app.directives.module.js"></script>
-
-    <!-- APP -->
-    <script src="/app/app.module.js"></script>
-    <script src="/app/app.routing.js"></script>
-
-    <!-- COMPONENTS -->
-    <script src="/app/app.component.js"></script>
 
     <title>SW SPA</title>
 </head>
 
-<body ng-app="app">
+<body>
     <app-main></app-main>
+
+    <script src="https://unpkg.com/@babel/polyfill/browser.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/oclazyload/1.1.0/ocLazyLoad.min.js"></script>
+
+    <!-- DIRECTIVES -->
+    <script type="text/babel" src="/app/directives/app.directives.module.js"></script>
+
+    <!-- APP -->
+    <script type="text/babel" src="/app/app.module.js"></script>
+    <script type="text/babel" src="/app/app.routing.js"></script>
+    <script type="text/babel" src="/app/app.component.js"></script>
+
 </body>
 
 </html>

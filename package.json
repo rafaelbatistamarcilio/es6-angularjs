@@ -15,5 +15,7 @@
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "protractor": "^5.4.1"
+  },
+  "devDependencies": {
   }
 }
