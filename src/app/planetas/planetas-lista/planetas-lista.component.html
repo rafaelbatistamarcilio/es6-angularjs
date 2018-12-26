@@ -1,0 +1,10 @@
+<label for="" id="label-pagina-planetas"> {{$ctrl.titulo}} </label>
+
+<div>
+    <input type="text" id="pesquisa-planeta" ng-model="$ctrl.busca" />
+    <button id="btn-pesquisar" ng-click="$ctrl.pesquisarPlaneta()"> Pesquisar </button>
+</div>
+
+<div ng-if="$ctrl.planetas.length > 0" id="planetas-container">
+    <app-planeta-detalhe ng-repeat="planeta in $ctrl.planetas" planeta="planeta"></app-planeta-detalhe>
+</div>
