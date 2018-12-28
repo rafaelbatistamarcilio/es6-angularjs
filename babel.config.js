@@ -3,7 +3,7 @@ module.exports = {
         [
             "@babel/env",
             {
-                useBuiltIns: "usage",
+                useBuiltIns: "entry",
                 debug: true,
                 targets: {
                    ie:'9',
@@ -13,7 +13,7 @@ module.exports = {
         ],
     ],
     plugins: [
-        ['@babel/plugin-transform-runtime', { "corejs": 2 }],
-        '@babel/plugin-syntax-dynamic-import'
+        ['@babel/plugin-transform-runtime'],
+        '@babel/plugin-syntax-dynamic-import',
     ]
 };

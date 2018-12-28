@@ -1,12 +1,15 @@
+import { environment } from "../../environment";
+
 export class PlanetasService {
 
+    /** @param {angular.IHttpService} $http */
     constructor($http){
         this.$http = $http;
     }
 
     async recuperarPlanetas(pagina) {
         const response = await this.$http({
-            url: 'https://swapi.co/api/planets/?page='+pagina,
+            url: `${environment.API.SW}/planets/?page=${pagina}`,
             method: 'GET'
         });
 
@@ -15,7 +18,7 @@ export class PlanetasService {
 
     async pesquisar(nome) {
         const response = await this.$http({
-            url: 'https://swapi.co/api/planets/?search='+nome,
+            url: `${environment.API.SW}/planets/?search=${nome}`,
             method: 'GET'
         });
         return response.data.results;

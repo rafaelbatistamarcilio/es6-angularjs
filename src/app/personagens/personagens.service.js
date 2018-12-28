@@ -1,3 +1,4 @@
+import { environment } from "../../environment";
 
     export class PersonagensService {
         
@@ -7,7 +8,7 @@
         
         async recuperarPersonagens(pagina) {
             const response = await  this.$http({
-                url: 'https://swapi.co/api/people/?page=' + pagina,
+                url: `${environment.API.SW}/people/?page=${pagina}`,
                 method: 'GET'
             });
 
@@ -16,7 +17,7 @@
         
         async pesquisar(nome) {
             const response = await   this.$http({
-                url: 'https://swapi.co/api/people/?search=' + nome,
+                url: `${environment.API.SW}/people/?search=${nome}`,
                 method: 'GET'
             });
             

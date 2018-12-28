@@ -1,8 +1,7 @@
 
 import * as angular from 'angular';
 
-import '@babel/plugin-transform-runtime';
-import '@babel/plugin-syntax-dynamic-import';
+import '@babel/polyfill';
 
 import 'angular-ui-router';
 import 'oclazyload';
