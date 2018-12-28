@@ -20,7 +20,7 @@ import { environment } from "../../environment";
                 url: `${environment.API.SW}/people/?search=${nome}`,
                 method: 'GET'
             });
-            
+      
             return response.data.results;
         }
     }
