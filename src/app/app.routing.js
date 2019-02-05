@@ -50,10 +50,24 @@ export class AppRouting {
         }
     }
 
+    getWizardState() {
+        return {
+            name: 'wizard',
+            url: '/wizard',
+            component: 'appWizard',
+            lazyLoad: async ($transition$) => {
+                const bundle = await import( /* webpackChunkName: "wizard.module" */ './wizard/wizard.module.js');
+                const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
+                return $ocLazyLoad.load(bundle.WizardModule);
+            }
+        }
+    }
+
     setStates() {
         this.$stateProvider.state(this.getHome());
         this.$stateProvider.state(this.getPlanetasState());
         this.$stateProvider.state(this.getPersonagensState());
+        this.$stateProvider.state(this.getWizardState());
         this.$urlRouterProvider.otherwise('/');
     }
 }

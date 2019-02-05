@@ -22,7 +22,7 @@ class PlanetasListaController {
     
     async pesquisarPlaneta() {
         this.planetas = [];
-        var response = await this.planetasService.pesquisar( this.busca );
+        const response = await this.planetasService.pesquisar( this.busca );
         this.planetas = response;
         this.$scope.$digest();
     }

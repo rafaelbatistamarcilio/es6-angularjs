@@ -10,7 +10,7 @@ class PersonagemDetalheController {
     }
     
     escolher() {
-        var dataEscolha = new Date();
+        const dataEscolha = new Date();
         
         this.onPersonagemEscolhido({
             $event: {

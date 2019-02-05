@@ -1,0 +1,10 @@
+<div>Passo: {{$ctrl.passoAtual}}</div>
+<div>
+    <app-wizard-passo1 ng-show="$ctrl.passoAtual == 1 "></app-wizard-passo1>
+    <app-wizard-passo2 ng-show="$ctrl.passoAtual == 2 "></app-wizard-passo2>
+    <app-wizard-passo3 ng-show="$ctrl.passoAtual == 3 "></app-wizard-passo3>
+</div>
+
+<button ng-click="$ctrl.anterior()">Anterior</button> 
+{{$ctrl.passoAtual}} 
+<button ng-click="$ctrl.proximo()"> Próximo </button>

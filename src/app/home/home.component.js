@@ -19,6 +19,10 @@ class HomeComponent {
     personagens() {
         this.$location.path('personagens');
     }
+
+    wizard() {
+        this.$location.path('wizard');
+    }
 }
 
 HomeComponent.$inject = ['$location'];
