@@ -19,34 +19,31 @@ class WizardPasso2Controller {
     }
 
     abrir(dados) {
-        console.log(dados);
         this.planeta = dados.planeta ? dados.planeta : {};
     }
 
     sair(dados) {
-        if (this.validar(dados)) {
+        try {
+            this.validar(dados)
             dados.planeta = this.planeta;
             this.$rootScope.$emit(`WIZARD:ABRIR`, dados)
-        } else {
-            this.toast.error('Dados não informados!', 'Erro');
+        } catch (error) {
+            this.toast.error(error.message, 'Erro');
         }
     }
 
     validar(dados) {
         if (dados.destino > this.passo) {
-            return this.validarProximo();
+            this.validarProximo();
         }
-
-        return true;
     }
 
     validarProximo() {
-        return this.planeta.clima !== undefined;
+        if (!this.planeta.clima) {
+            throw new Error('Dados não informados!');
+        }
     }
 }
 
 WizardPasso2Controller.$inject = ['$rootScope', 'toastr'];
-export const WizardPasso2Component = {
-    template: template,
-    controller: WizardPasso2Controller
-}
+export const WizardPasso2Component = { template, controller: WizardPasso2Controller }

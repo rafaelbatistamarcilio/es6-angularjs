@@ -26,10 +26,11 @@ class WizardController {
         const dados = { atual: this.passoAtual, destino: this.passoAtual - 1};
         this.$rootScope.$emit(`WIZARD:PASSO:${this.passoAtual}:SAIR`, dados);
     }
+
+    isAtual(passo){
+        return this.passoAtual === passo;
+    }
 }
 
 WizardController.$inject = ['$rootScope'];
-export const WizardComponent = {
-    template: template,
-    controller: WizardController
-}
+export const WizardComponent = { template, controller: WizardController }

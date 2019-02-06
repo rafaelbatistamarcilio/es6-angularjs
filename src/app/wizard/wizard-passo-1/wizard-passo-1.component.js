@@ -19,34 +19,34 @@ class WizardPasso1Controller {
     }
 
     abrir(dados) {
-        console.log(dados);
         this.planeta = dados.planeta ? dados.planeta : {};
     }
 
     sair(dados) {
-        if (this.validar(dados)) {
+        try {
+            this.validar(dados);
             dados.planeta = this.planeta;
-            this.$rootScope.$emit(`WIZARD:ABRIR`, dados)
-        } else {
-            this.toast.error('Dados não informados!', 'Erro');
+            this.$rootScope.$emit(`WIZARD:ABRIR`, dados);
+        } catch (error) {
+            this.toast.error(error.message, 'Erro');
         }
     }
 
     validar(dados) {
-        if (dados.destino > this.passo) {
+        if (dados.destino >= this.passo) {
             return this.validarProximo();
         }
 
-        return true;
+        dados.destino = 1;
+        throw new Error('Operação inválida!');
     }
 
     validarProximo() {
-        return this.planeta.nome !== undefined;
+        if (!this.planeta.nome) {
+            throw new Error('Dados não informados!');
+        }
     }
 }
 
 WizardPasso1Controller.$inject = ['$rootScope', 'toastr'];
-export const WizardPasso1Component = {
-    template: template,
-    controller: WizardPasso1Controller
-}
+export const WizardPasso1Component = { template, controller: WizardPasso1Controller }

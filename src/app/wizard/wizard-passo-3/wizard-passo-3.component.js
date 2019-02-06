@@ -43,10 +43,11 @@ class WizardPasso3Controller {
             throw Error('Dados inválidos');
         }
     }
+
+    salvar(){
+        console.log(this.planeta);
+    }
 }
 
 WizardPasso3Controller.$inject = ['$rootScope', 'toastr'];
-export const WizardPasso3Component = {
-    template: template,
-    controller: WizardPasso3Controller
-}
+export const WizardPasso3Component = { template, controller: WizardPasso3Controller }
