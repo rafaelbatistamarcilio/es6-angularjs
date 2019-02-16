@@ -24,9 +24,4 @@ class HomeComponent {
 }
 
 HomeComponent.$inject = ['$location'];
-const appHome =  {
-    template: template,
-    controller: HomeComponent
-};
-
-export {appHome};
+export const appHome =  { template: template, controller: HomeComponent };

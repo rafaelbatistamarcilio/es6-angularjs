@@ -2,10 +2,6 @@ import * as template from './wizard-passo-1.component.html';
 
 class WizardPasso1Controller {
 
-    /** 
-     * @param {angular.IRootScopeService} $rootScope 
-     * @param {angular.toastr.IToastrService} toastr
-     */
     constructor($rootScope, toastr) {
         this.$rootScope = $rootScope;
         this.toast = toastr;

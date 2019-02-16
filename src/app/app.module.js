@@ -6,4 +6,4 @@ import { AppComponent } from './app.component';
 
 export const AppModule = angular.module('app', [ SharedModule.name ])
 .component('appMain', AppComponent)
-.config(AppRouting.forRoot);
+.config(['$stateProvider', '$urlRouterProvider', AppRouting.forRoot]);

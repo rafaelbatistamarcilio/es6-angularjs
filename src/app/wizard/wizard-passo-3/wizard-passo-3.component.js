@@ -2,8 +2,8 @@ import * as template from './wizard-passo-3.component.html';
 
 class WizardPasso3Controller {
 
-    /** 
-     * @param {angular.IRootScopeService} $rootScope 
+    /**
+     * @param {angular.IRootScopeService} $rootScope
      * @param {angular.toastr.IToastrService} toastr
      */
     constructor($rootScope, toastr) {
@@ -44,9 +44,11 @@ class WizardPasso3Controller {
         }
     }
 
-    salvar(){
-    }
+    salvar() {}
 }
 
 WizardPasso3Controller.$inject = ['$rootScope', 'toastr'];
-export const WizardPasso3Component = { template, controller: WizardPasso3Controller }
+export const WizardPasso3Component = {
+    template,
+    controller: WizardPasso3Controller
+}
