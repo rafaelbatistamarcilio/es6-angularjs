@@ -1,0 +1,42 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "parser": "babel-eslint",
+        "sourceType": "module",
+        "ecmaVersion": 2018
+    },
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "rules": {
+        "no-console": 1,
+        "no-debugger": 2,
+        "no-dupe-args": 2,
+        "no-dupe-keys": 2,
+        "no-extra-semi": 2,
+        "no-invalid-regexp": 2,
+        "no-irregular-whitespace": 1,
+        "no-unreachable": 2,
+        "block-scoped-var": 2,
+        "complexity": [1, 2],
+        "consistent-return": 2,
+        "eqeqeq": [1, "smart"],
+        "no-alert": 2,
+        "no-else-return": 1,
+        "no-eval": 2,
+        "no-invalid-this": 2,
+        "no-process-env": 2,
+        "no-throw-literal": 2,
+        "no-unused-expressions": 1,
+        "vars-on-top": 1,
+        "no-unused-vars": 1,
+        "no-continue": 2,
+        "no-lonely-if": 1,
+        "no-underscore-dangle": 1,
+        "no-var": 2,
+        "max-params": [1, 3],
+        "max-statements": [2, 20],
+        "max-lines-per-function": ["error", 20]
+    }
+}

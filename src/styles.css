@@ -1,0 +1,7 @@
+
+@import '../node_modules/angular-toastr/dist/angular-toastr.css';
+
+.app-container{
+    width: 80%;
+    margin: 0 auto;
+}
