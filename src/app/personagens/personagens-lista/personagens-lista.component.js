@@ -11,12 +11,11 @@ class PersonagensListaController {
     }
 
     $onInit() {
-        console.log('PersonagensListaComponent');
         this.recuperarPersonagens();
     }
 
     async recuperarPersonagens() {
-        var response = await this.personagensService.recuperarPersonagens(1);
+        const response = await this.personagensService.recuperarPersonagens(1);
         this.personagens = response;
         this.$scope.$digest();
     }
@@ -34,7 +33,4 @@ class PersonagensListaController {
 }
 
 PersonagensListaController.$inject = ['PersonagensService', '$scope'];
-export const PersonagensListaComponent = {
-    template,
-    controller: PersonagensListaController
-};
+export const PersonagensListaComponent = { template, controller: PersonagensListaController };

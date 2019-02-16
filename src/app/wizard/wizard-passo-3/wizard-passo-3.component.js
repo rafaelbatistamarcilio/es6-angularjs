@@ -45,7 +45,6 @@ class WizardPasso3Controller {
     }
 
     salvar(){
-        console.log(this.planeta);
     }
 }
 

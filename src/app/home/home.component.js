@@ -8,8 +8,6 @@ class HomeComponent {
     }
 
     $onInit() {
-        const teste = 'TESTE';
-        console.log(teste);
     }
 
     planetas() {

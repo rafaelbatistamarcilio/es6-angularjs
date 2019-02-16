@@ -1,6 +1,11 @@
 
 export class AppRouting {
 
+    /**
+     * 
+     * @param {angular.ui.IStateProvider} $stateProvider 
+     * @param {angular.ui.IUrlRouterProvider} $urlRouterProvider 
+     */
     constructor($stateProvider, $urlRouterProvider) {
         this.$stateProvider = $stateProvider;
         this.$urlRouterProvider = $urlRouterProvider;
@@ -11,19 +16,25 @@ export class AppRouting {
         return new AppRouting($stateProvider, $urlRouterProvider);
     }
 
+    /**
+     * @returns {angular.ui.IState}
+     */
     getHome() {
         return {
             name: 'home',
             url: '/',
             component: 'appHome',
             lazyLoad: async ($transition$) => {
-                const bundle = await import( /* webpackChunkName: "home.module" */ './home/home.module.js');
+                const bundle = await import( /* webpackChunkName: "home.module" */ './home/home.module.js'); // eslint-disable-line
                 const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
                 return $ocLazyLoad.load(bundle.HomeModule);
             }
         }
     }
 
+    /**
+     * @returns {angular.ui.IState}
+     */
     getPlanetasState() {
         return {
             name: 'planetas',
@@ -37,6 +48,9 @@ export class AppRouting {
         }
     }
 
+    /**
+     * @returns {angular.ui.IState}
+     */
     getPersonagensState() {
         return {
             name: 'personagens',
@@ -50,6 +64,9 @@ export class AppRouting {
         }
     }
 
+    /**
+     * @returns {angular.ui.IState}
+     */
     getWizardState() {
         return {
             name: 'wizard',
