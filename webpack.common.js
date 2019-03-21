@@ -50,7 +50,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['dist']
+        }),
         new HtmlWebpackPlugin({
             favicon: 'src/favicon.ico',
             template: 'src/index.html'

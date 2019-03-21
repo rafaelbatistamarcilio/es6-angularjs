@@ -2,6 +2,11 @@ import * as template from './personagens-lista.component.html';
 
 class PersonagensListaController {
 
+    /**
+     *
+     * @param {PersonagemService} PersonagensService
+     * @param {angular.IScope} $scope
+     */
     constructor(PersonagensService, $scope) {
         this.titulo = 'Pesquisa de Personagens';
         this.personagens = [];

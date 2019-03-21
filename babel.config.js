@@ -4,6 +4,7 @@ module.exports = {
             "@babel/env",
             {
                 useBuiltIns: "entry",
+                corejs: 3,
                 debug: true,
                 targets: {
                    ie:'9',
